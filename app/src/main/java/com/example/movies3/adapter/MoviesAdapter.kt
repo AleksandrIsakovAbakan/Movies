@@ -49,17 +49,16 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.MoviesViewHolder>() {
     override fun onBindViewHolder(holder: MoviesViewHolder, position: Int) {
 
         val movie: Doc = movies[position]
-        val rating: Double? = movie.rating?.getKp()
+        val rating: Double? = movie.getRating()?.getKp()
 
         val kp = if (rating != null) {
             rating.times(10).roundToInt() / 10.0
         } else 0.0
         val backgroundId = setBackground(rating)
-//        Log.d("MoviesAdapter-onBindViewHolder", movie.getName().toString())
+
         Glide.with(holder.itemView)
             .asDrawable()
             .load(movie.getPoster()?.getUrl() ?: R.drawable.baseline_error_36)
-            //.override(600,600)
             .into(holder.imageViewPoster)
 
         val background: Drawable? = ContextCompat.getDrawable(holder.itemView.context, backgroundId)

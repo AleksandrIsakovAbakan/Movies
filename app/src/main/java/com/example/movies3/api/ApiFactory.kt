@@ -8,13 +8,13 @@ import retrofit2.create
 
 object ApiFactory {
 
-    private val BASE_URL= "https://api.kinopoisk.dev/v1.4/"
+    private val BASE_URL = "https://api.kinopoisk.dev/v1.4/"
 
     private val retrofit: Retrofit = Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
-                .build()
+        .baseUrl(BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+        .build()
 
     val apiService = retrofit.create<ApiService>()
 }

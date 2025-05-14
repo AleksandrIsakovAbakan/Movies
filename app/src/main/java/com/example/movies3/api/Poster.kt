@@ -8,7 +8,7 @@ data class Poster(
     private val url: String,
     @SerializedName("previewUrl")
     private val previewUrl: String
-): Serializable {
+) : Serializable {
     fun getUrl(): String = url
     fun getPreviewUrl() = previewUrl
 }

@@ -37,8 +37,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         val disposable: Disposable = ApiFactory.apiService.loadMovies(page)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .doOnSubscribe { isLoading.setValue(true) }
-            .doAfterTerminate { isLoading.setValue(false) }
+            .doOnSubscribe { isLoading.value = true }
+            .doAfterTerminate { isLoading.value = false }
             .subscribe({ loadMovies(it) }, { Log.d("MainActivity", it.toString()) })
 
         compositeDisposable.add(disposable)
@@ -51,9 +51,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         if (loadedMovies != null) {
             val loadedMovies2: MutableList<Doc> = loadedMovies.toMutableList()
             loadedMovies2.addAll(a.getDocs())
-            moviesLiveData.setValue(loadedMovies2.toList())
+            moviesLiveData.value = loadedMovies2.toList()
         } else {
-            moviesLiveData.setValue(a.getDocs())
+            moviesLiveData.value = a.getDocs()
         }
 
         Log.d("MainViewModel", "Loaded: $page")

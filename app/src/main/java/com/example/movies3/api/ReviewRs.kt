@@ -3,7 +3,7 @@ package com.example.movies3.api
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-class ReviewsRs(
+class ReviewRs(
     @SerializedName("docs")
     private val docs: Array<Review>,
     @SerializedName("total")
@@ -14,6 +14,6 @@ class ReviewsRs(
     private val page: Int,
     @SerializedName("pages")
     private val pages: Int
-): Serializable {
+) : Serializable {
     fun getReviews(): Array<Review> = docs
 }

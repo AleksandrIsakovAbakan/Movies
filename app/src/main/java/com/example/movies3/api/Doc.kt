@@ -1,93 +1,35 @@
-package com.example.movies3.api;
+package com.example.movies3.api
 
+import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
-import com.google.gson.annotations.SerializedName;
-
-import java.io.Serializable;
-
-public class Doc implements Serializable {
-
+data class Doc(
     @SerializedName("id")
-    private int id;
+    private var id: Int,
+
     @SerializedName("name")
-    private String name;
+    private var name: String?,
+
     @SerializedName("year")
-    private int year;
+    private var year: Int?,
+
     @SerializedName("description")
-    private String description;
+    private var description: String?,
+
     @SerializedName("rating")
-    //@Embedded
-    private Rating rating;
+    private var rating: Rating?,
+
     @SerializedName("poster")
-    //@Embedded
-    private Poster poster;
+    private var poster: Poster?,
+
     @SerializedName("videos")
-    //@Embedded
-    private VideoTypes videos;
-
-    public Doc(int id, String name, int year, String description, Rating rating, Poster poster, VideoTypes videos) {
-        this.id = id;
-        this.name = name;
-        this.year = year;
-        this.description = description;
-        this.rating = rating;
-        this.poster = poster;
-        this.videos = videos;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Rating getRating() {
-        return rating;
-    }
-
-    public void setRating(Rating rating) {
-        this.rating = rating;
-    }
-
-    public Poster getPoster() {
-        return poster;
-    }
-
-    public void setPoster(Poster poster) {
-        this.poster = poster;
-    }
-
-    public VideoTypes getVideos() {
-        return videos;
-    }
-
-    public void setVideos(VideoTypes videos) {
-        this.videos = videos;
-    }
+    private var videos: VideoTypes?
+) : Serializable {
+    fun getRating(): Rating? = rating
+    fun getPoster(): Poster? = poster
+    fun getName(): String? = name
+    fun getYear(): Int? = year
+    fun getDescription(): String? = description
+    fun getVideos(): VideoTypes? = videos
+    fun getId(): Int = id
 }

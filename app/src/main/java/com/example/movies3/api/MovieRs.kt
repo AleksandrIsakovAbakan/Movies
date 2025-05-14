@@ -13,6 +13,6 @@ class MovieRs(
     private val page: Int,
     @SerializedName("pages")
     private val pages: Int
-){
+) {
     fun getDocs(): List<Doc> = docs
 }

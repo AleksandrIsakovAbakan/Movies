@@ -27,6 +27,6 @@ interface ApiService {
         "Accept: application/json",
         "X-API-KEY: T4VWX6K-N86M3F5-Q6ZCCD6-T11T1PX"
     )
-    fun getReviews(@Query("movieId") idFilms: Int): Single<ReviewsRs>?
+    fun getReviews(@Query("movieId") idFilms: Int): Single<ReviewRs>?
 
 }

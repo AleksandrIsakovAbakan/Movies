@@ -77,6 +77,17 @@
             tools:listitem="@layout/review_item"
             tools:text="22222" />
 
+        <ImageView
+            android:id="@+id/imageViewStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/star"
+            app:layout_constraintBottom_toBottomOf="@id/imageViewPoster"
+            app:layout_constraintEnd_toEndOf="@id/imageViewPoster"
+            app:layout_constraintTop_toBottomOf="@id/imageViewPoster"
+            tools:srcCompat="@android:drawable/btn_star_big_on" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

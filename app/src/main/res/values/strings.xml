@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Movies3</string>
+    <string name="star">star</string>
+    <string name="favourite">Избранное</string>
 </resources>

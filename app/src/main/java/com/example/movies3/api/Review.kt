@@ -5,7 +5,7 @@ import java.io.Serializable
 
 data class Review(
     @SerializedName("id")
-    private val id:Int,
+    private val id: Int,
     @SerializedName("movieId")
     private val movieId: Int,
     @SerializedName("title")
@@ -30,7 +30,7 @@ data class Review(
     private val updatedAt: String,
     @SerializedName("createdAt")
     private val createdAt: String
-): Serializable {
+) : Serializable {
     fun getAuthor(): String = author
     fun getReview(): String = review
     fun getType(): String = type

@@ -8,13 +8,7 @@ data class Video(
     private val url: String?,
     @SerializedName("name")
     private val name: String?,
-//    @SerializedName("site")
-//    private val site: String?,
-//    @SerializedName("size")
-//    private val size: String?,
-//    @SerializedName("type")
-//    private val type: String?,
-): Serializable {
+) : Serializable {
     fun getVideo(): String? = url
     fun getNameVideo(): String? = name
 }

@@ -44,7 +44,7 @@ class TrailersAdapter : RecyclerView.Adapter<TrailersAdapter.TrailersViewHolder>
     }
 
     class TrailersViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-         val textViewTrailers: TextView = itemView.findViewById(R.id.textViewTrailers)
+        val textViewTrailers: TextView = itemView.findViewById(R.id.textViewTrailers)
     }
 
     fun interface OnTrailerClickListener {
